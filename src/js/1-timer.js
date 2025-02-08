@@ -48,7 +48,7 @@ flatpickr(input, flatpickrOptins);
 function showMessage() {
   iziToast.show({
     position: 'topRight',
-    title: 'Error',
+    title: ' Error',
     titleColor: 'white',
     messageColor: 'white',
     backgroundColor: 'red',

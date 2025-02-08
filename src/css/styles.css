@@ -86,3 +86,95 @@ button {
 .label {
   display: block;
 }
+
+/*================ snackbar ===================*/
+
+fieldset + button {
+  all: unset;
+}
+
+form {
+  width: 360px;
+}
+
+form input,
+form label,
+form legend,
+form button {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: #2e2f42;
+  cursor: pointer;
+}
+
+.form-label {
+  display: block;
+  text-align: start;
+  width: 100%;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+form input[name='delay'] {
+  display: block;
+  margin-top: 8px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  width: 100%;
+  padding: 8px 16px;
+  letter-spacing: 0.04em;
+  transition: border-color 200ms linear;
+}
+
+form input[name='delay']:hover {
+  border-color: #000000;
+}
+
+form input[name='delay']:focus {
+  border-color: #4e75ff;
+  outline: none;
+}
+
+form fieldset {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0 0 0;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  padding: 15px 44px 2px 50px;
+}
+
+form legend {
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.form-radio-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px;
+}
+
+form input[name='state'] {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+form button {
+  margin-top: 24px;
+  border-radius: 8px;
+  width: 100%;
+  padding-block: 8px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #ffffff;
+  background-color: #4e75ff;
+  transition: background-color 200ms linear;
+}
+
+form button:hover {
+  background-color: #6c8cff;
+}
