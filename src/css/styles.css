@@ -1,4 +1,4 @@
-/**
+/* 
   |============================
   | include css partials with
   | default @import url()
@@ -16,3 +16,73 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 48px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+.is-active {
+  background-color: #4e75ff;
+  color: #ffffff;
+}
+#datetime-picker,
+[data-start] {
+  width: 75px;
+  height: 40px;
+  padding: 8px 16px 8px 16px;
+  gap: 10px;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+  border-color: #cfcfcf;
+}
+
+#datetime-picker {
+  width: 272px;
+  height: 40px;
+  gap: 8px;
+  border: 1px solid #808080;
+  padding: 7px 15px;
+}
+
+#datetime-picker:hover {
+  border: 1px solid #000000;
+}
+
+#datetime-picker:focus {
+  border: 1px solid #4e75ff;
+}
+.container-timer {
+  display: flex;
+  justify-content: center;
+}
+.timer {
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+}
+
+.field {
+  text-align: center;
+}
+
+.value {
+  display: block;
+  line-height: 1.2;
+  font-size: 40px;
+  letter-spacing: 0.04em;
+}
+
+.label {
+  display: block;
+}
