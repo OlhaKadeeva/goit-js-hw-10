@@ -27,7 +27,7 @@ const flatpickrOptins = {
   //Метод onClose() з об'єкта параметрів викликається щоразу під час закриття елемента інтерфейсу, який створює flatpickr. Саме в ньому варто обробляти дату, обрану користувачем. Параметр selectedDates — це масив обраних дат, тому ми беремо перший елемент selectedDates[0].
   onClose(selectedDates) {
     userSelectedDate = selectedDates[0];
-    console.log(userSelectedDate);
+    // console.log(userSelectedDate);
     correctDate(userSelectedDate); //після валідації
   },
 };
@@ -48,7 +48,7 @@ flatpickr(input, flatpickrOptins);
 function showMessage() {
   iziToast.show({
     position: 'topRight',
-    title: ' Error',
+    title: '😞 Error',
     titleColor: 'white',
     messageColor: 'white',
     backgroundColor: 'red',
@@ -57,7 +57,7 @@ function showMessage() {
   });
 }
 
-function checkDate(date) {
+function correctDate(date) {
   if (new Date(date) > new Date()) {
     startBtn.disabled = false;
     startBtn.classList.toggle('is-active');
@@ -73,7 +73,7 @@ function checkDate(date) {
 // Таймер це об'єкт, у якого є дві функції start і stop.
 //При натисканні на кнопку Start вона стає неактивною, на сторінку виводиться час, що лишився до обраної дати у форматі xx:xx:xx:xx, і запускається зворотний відлік часу до обраної дати.
 function startTimer() {
-  if (!checkDate(userSelectedDate)) return;
+  if (!correctDate(userSelectedDate)) return;
 
   clearInterval(currentInterval);
 

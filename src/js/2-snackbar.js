@@ -2,17 +2,17 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
-const inputDelay = document.querySelector('input[name="delay"]');
+const delayInput = document.querySelector('input[name="delay"]');
 
-form.addEventListener('submit', resetSubmit);
+form.addEventListener('submit', handleSubmit);
 
-function resetSubmit(evt) {
-  evt.preventDefault();
+function handleSubmit(e) {
+  e.preventDefault();
 
   const stateRadio = document.querySelector('input[name="state"]:checked');
 
   const state = stateRadio.value === 'fulfilled' ? true : false;
-  const delay = +inputDelay.value;
+  const delay = +delayInput.value;
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -24,14 +24,16 @@ function resetSubmit(evt) {
     }, delay);
   });
 
-  promise.then(showMessage(true, delay)).catch(showMessage(false, delay));
+  promise
+    .then(delay => showMessage(true, delay))
+    .catch(delay => showMessage(false, delay));
 }
 
 function showMessage(status, delay) {
-  const title = status ? 'OK' : 'Error';
+  const title = status ? '😊 OK' : '😞 Error';
   const message = status
-    ? `✅ Fulfilled promise in ${delay}ms`
-    : `❌ Rejected promise in ${delay}ms`;
+    ? `Fulfilled promise in ${delay}ms`
+    : `Rejected promise in ${delay}ms`;
 
   const backgroundColor = status ? '#59A10D' : '#EF4040';
 
